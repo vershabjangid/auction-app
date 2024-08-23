@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.css"
+import "bootstrap/dist/js/bootstrap.bundle.js"
+import { Forgot_Password } from './Login/Forgot_Password.jsx';
+import { Login_Pages } from './Login/Login_Pages.jsx';
+import { Otp_Page } from './Login/Otp_Page.jsx';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Login_Pages />} />
+        <Route path='/forgot-password' element={<Forgot_Password />} />
+        <Route path='/otp-verification' element={<Otp_Page />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
