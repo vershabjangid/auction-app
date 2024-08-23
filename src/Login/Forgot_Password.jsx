@@ -1,7 +1,7 @@
 import React from 'react'
 import { Field, Form, Formik } from 'formik'
 import logo from "../images/logo.png"
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export function Forgot_Password() {
     let naviget = useNavigate();
@@ -18,7 +18,7 @@ export function Forgot_Password() {
                         <section className='w-25'> <img src={logo} alt="" className='w-100' /></section>
                     </section>
 
-                    <section className='text-center fs-2 fw-bold text-white'>Forgot Password</section>
+                    <section className='text-center fs-2 fw-bold text-white'><h1>Forgot Password</h1></section>
 
                     <Formik
                         initialValues={
@@ -37,7 +37,11 @@ export function Forgot_Password() {
                             </section>
 
                             <section className='d-flex justify-content-center align-items-center mt-4 fs-6 text-white'>
-                                Remember the password&nbsp;<span className='text-black text-decoration-underline'>Login</span>
+                                Remember the password&nbsp;<span className='text-black'>
+                                    <Link to={"/"} className='text-black text-decoration-none'>
+                                        Login
+                                    </Link>
+                                </span>
                             </section>
                         </Form>
                     </Formik>
